@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "post"
+    "displayName": "post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,13 +17,13 @@
       "required": true
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "slug": {
       "type": "uid",
@@ -42,7 +43,7 @@
       "inversedBy": "posts"
     },
     "content": {
-      "type": "blocks",
+      "type": "richtext",
       "required": true
     }
   }

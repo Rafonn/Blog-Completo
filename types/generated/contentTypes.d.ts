@@ -430,6 +430,7 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
+    description: '';
     displayName: 'post';
     pluralName: 'posts';
     singularName: 'post';
@@ -443,7 +444,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::categorie.categorie'
     >;
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
     cover: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
