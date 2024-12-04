@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:static" : "next build && next export"
+    "deploy:static": "next build && next export"
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
@@ -16,6 +16,8 @@
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {

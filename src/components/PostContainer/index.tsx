@@ -6,5 +6,5 @@ export type PostContainerProps = {
 }
 
 export const PostContainer = ({ content } : PostContainerProps) => {
-  return <Container>{content}</Container>;
+  return <Container dangerouslySetInnerHTML={{__html: content}}/>;
 };
