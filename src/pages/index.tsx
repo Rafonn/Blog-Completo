@@ -18,6 +18,6 @@ export const getStaticProps: GetStaticProps = async() => {
 
   return {
     props: { posts },
-    //revalidate: 5000
+    revalidate: 5000
   }
 }
