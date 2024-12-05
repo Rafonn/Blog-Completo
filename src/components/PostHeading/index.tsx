@@ -1,4 +1,4 @@
-import { Children, ReactNode } from "react"
+import { ReactNode } from "react"
 import { Container } from "./styles";
 
 export type HeadingProps = {
