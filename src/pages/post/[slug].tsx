@@ -6,7 +6,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 
 export type DynamicPostProps = {
-    post: PostData
+    post: PostData;
 }
 
 interface Params extends ParsedUrlQuery {
