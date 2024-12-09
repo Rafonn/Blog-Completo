@@ -41,5 +41,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     const posts = await getAllPosts(`&filters[category][name][$eq]=${filter}`);
     return {
         props: { posts, category },
+        revalidate: 3,
     };
 };
