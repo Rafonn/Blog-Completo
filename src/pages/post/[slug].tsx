@@ -1,3 +1,5 @@
+import Error from "next/error";
+import { useRouter } from "next/router";
 import { Post } from "@/containers/posts";
 import { getAllPosts } from "@/data/posts/get-all-posts";
 import { getPosts } from "@/data/posts/get-posts";
@@ -14,7 +16,17 @@ interface Params extends ParsedUrlQuery {
 }
 
 const DynamicFooter = ({ post }: DynamicPostProps) => {
-    return <Post post={post}/>
+    const router = useRouter();
+
+    if(router.isFallback){
+        return <div>Página carregando, por favor, aguarde.</div>;
+    }
+
+    if(!post){
+        return <Error statusCode={404}/>;
+    }
+
+    return <Post post={post}/>;
 };
 
 export default DynamicFooter;
@@ -26,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         paths: posts.map((post) => ({
             params: { slug: post.slug },
         })),
-        fallback: false,
+        fallback: true,
     };
 };
 
@@ -43,5 +55,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
     return {
         props: { post: posts[0] },
+        revalidate: 3,
     };
 };
