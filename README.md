@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
+You can access the site using this link: https://gregarious-mochi-c84896.netlify.app.
+The website probably has no content because I am using the free version of Heroku for the backend.
+
 ## Getting Started
 
 First, run the development server:
